@@ -2,6 +2,14 @@ import os
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
+import os
+
+class Config(object):
+
+      BOT_TOKEN = os.environ.get("BOT_TOKEN", "5747283813:AAFQ4Ef1KYk13U8ik1cqG0zRVHer729PFbE")
+      API_ID = int(os.environ.get("API_ID", 11385233))
+      API_HASH = os.environ.get("API_HASH", "16d51f2c856dec1c9abf7f4b31fb9d6e")
+      OWNER_ID = int(os.environ.get("OWNER_ID", "5333072972"))
 
 @Client.on_message(filters.command('start'))
 async def start(c, m):
